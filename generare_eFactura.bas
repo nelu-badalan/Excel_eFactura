@@ -107,6 +107,8 @@ Private Const L_LINETOTAL As Long = 14
 ' MAIN - genereaza XML doar pentru factura de pe randul activ din 'Facturi_Antet'
 '==============================================================================
 Public Sub Genereaza_eFactura_XML_Excel()
+Attribute Genereaza_eFactura_XML_Excel.VB_Description = "Genereaza xml"
+Attribute Genereaza_eFactura_XML_Excel.VB_ProcData.VB_Invoke_Func = "X\n14"
     On Error GoTo ErrHandler
 
     Dim wsF As Worksheet, wsC As Worksheet, wsA As Worksheet, wsL As Worksheet
@@ -590,7 +592,7 @@ Private Function GetSheets(ByRef wsF As Worksheet, ByRef wsC As Worksheet, _
 End Function
 
 Private Function LastUsedRow(ws As Worksheet) As Long
-    LastUsedRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
+    LastUsedRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).row
 End Function
 
 Private Function GetCellStr(ws As Worksheet, r As Long, c As Long) As String
